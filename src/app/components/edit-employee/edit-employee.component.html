@@ -1,0 +1,87 @@
+<div class="container">
+  <h2 class="header">
+    {{ mode === "add" ? "Add Employee" : "Edit Employee" }}
+  </h2>
+  <form class="form-container form-container-additional-style">
+    <mat-form-field
+      appearance="outline"
+      *ngIf="mode === 'edit'"
+      class="full-width"
+    >
+      <mat-label>ID</mat-label>
+      <input matInput [value]="employee.id" readonly class="input" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>First Name</mat-label>
+      <input
+        matInput
+        [(ngModel)]="employee.firstName"
+        name="firstName"
+        class="input"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input
+        matInput
+        [(ngModel)]="employee.lastName"
+        name="lastName"
+        class="input"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Age</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="employee.age"
+        name="age"
+        class="input"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Phone</mat-label>
+      <input
+        matInput
+        type="phone"
+        [(ngModel)]="employee.phone"
+        name="phone"
+        class="input"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>City</mat-label>
+      <input matInput [(ngModel)]="employee.city" name="city" class="input" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Street</mat-label>
+      <input
+        matInput
+        [(ngModel)]="employee.street"
+        name="street"
+        class="input"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Department</mat-label>
+      <input
+        matInput
+        [(ngModel)]="employee.department"
+        name="department"
+        class="input"
+      />
+    </mat-form-field>
+
+    <div class="button-container">
+      <button class="button" mat-flat-button (click)="save()">Save</button>
+      <button class="button" mat-flat-button (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
